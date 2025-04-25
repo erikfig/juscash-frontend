@@ -2,12 +2,12 @@ import { getToken } from '../utils/getToken';
 import { handleUnauthorized } from '../utils/handleUnauthorized';
 import { NavigateFunction } from 'react-router-dom';
 
-const API_URL = 'http://localhost:3000/publications';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 export const listAll = async (navigate: NavigateFunction, filters: Record<string, string> = {}) => {
   try {
     const queryString = new URLSearchParams(filters).toString();
-    const response = await fetch(`${API_URL}?${queryString}`, {
+    const response = await fetch(`${API_URL}/publications?${queryString}`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${getToken()}`,
