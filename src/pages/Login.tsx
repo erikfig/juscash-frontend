@@ -49,7 +49,7 @@ function Login() {
       <ToastContainer />
       <div className="text-center mb-6">
         <img
-          src="/login.png"
+          src={`${import.meta.env.VITE_BASE_URL}/login.png`}
           alt="JusCash"
           className="mx-auto"
         />

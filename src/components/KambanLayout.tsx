@@ -30,7 +30,7 @@ const KambanLayout: React.FC<KambanLayoutProps> = ({ children }) => {
         <div className="container mx-auto flex justify-between items-center">
           <div>
             <img
-              src="/login.png"
+              src={`${import.meta.env.VITE_BASE_URL}/login.png`}
               alt="JusCash"
               className="mx-auto h-7"
             />
